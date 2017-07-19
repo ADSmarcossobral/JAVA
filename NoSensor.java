@@ -13,6 +13,10 @@ public class NoSensor {
 		this.altura = altura;
 		this.setTemperatura(0);
 	}
+    
+    public NoSensor(){
+        this(id, 0, 0, 0);
+    }
 	
 	public String getId(){
 		return this.id;
