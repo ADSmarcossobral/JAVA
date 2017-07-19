@@ -6,18 +6,21 @@ public class NoSensor {
     private double altura;
     private double temperatura;
 
-    public NoSensor(String id, double latitude, double longitude, double altura){
-        this.id = id;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.altura = altura;
-        this.setTemperatura(0);
+    private NoSensor(String id, double latitude, double longitude, double altura){
+        this.setId(id);
+        this.mover(latitude, longitude, altura);
+        this.setTemperatura(temperatura);
     }
 
-    public NoSensor(){
+    public NoSensor(String id){
         this(id, 0, 0, 0);
     }
 
+    public NoSensor(NoSensor outro){
+        this(outro.getId(), outro.getLatitude(), outro.getLongitude(), outro.getAltura());
+        this.setTemperatura(outro.getTemperatura());
+    }
+    
     public String getId(){
         return this.id;
     }
