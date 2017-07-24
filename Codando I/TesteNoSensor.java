@@ -2,10 +2,12 @@
 public class TesteNoSensor {
 
 	public static void main(String args[]){
-		NoSensor no1 = new NoSensor("1",54,23,9);
-		NoSensor no2 = new NoSensor("2",46,12,6);
+		NoSensor [][] nos;
+		nos = new NoSensor[2][2];
+		for(int x = 0; x < nos.length; x++)
+			for(int y = 0; y < nos[x].length; y++)
+				nos[x][y] = new NoSensor();
 		
-		System.out.println(no1);
-		System.out.println(no2);
+
 	}
 }
