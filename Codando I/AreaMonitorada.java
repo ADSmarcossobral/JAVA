@@ -18,7 +18,7 @@ public class AreaMonitorada{
         return maior - menor;
     }
 
-    public double amplitudeTermica(double altitude){
+    public double amplitudeTermica(double altura){
         double maior = 0.0, menor = 0.0;
         if(this.sensores.length > 0){
             maior = sensores[0].getTemperatura();
