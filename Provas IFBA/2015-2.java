@@ -59,5 +59,27 @@ public class RelogioDigital{
             aux = "AM";
         return getHoras() - op + ":" + getMinutos() + ":" + getSegundos() + "[" + aux + "]";
     }
-    
+
+    public int compara(RelogioDigital outro){
+        if(this.getHoras() > outro.getHoras()){
+            return 1;
+        } else if(this.getHoras() < outro.getHoras()){
+            return -1;
+        } else{
+            if(this.getMinutos() > outro.getMinutos()){
+                return 1;
+            } else if(this.getMinutos() < outro.getMinutos()){
+                return -1;
+            } else{
+                if(this.getSegundos() > outro.getSegundos()){
+                    return 1;
+                } else if(this.getSegundos() < outro.getSegundos()){
+                    return -1;
+                } else{
+                    return 0;
+                }
+            }
+        }
+    }
+
 }
