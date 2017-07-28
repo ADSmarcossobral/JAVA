@@ -6,9 +6,7 @@ public class RelogioDigital{
     private int segundos;
 
     public RelogioDigital(){
-        this.horas = 0;
-        this.minutos = 0;
-        this.segundos = 0;
+        this(0, 0, 0);
     }
 
     public RelogioDigital(int horas, int minutos, int segundos){
