@@ -29,4 +29,12 @@ public class Molecula{
         return menor;
     }
 
+    public int getQtdedAtomos(ElementoQuimico outro){
+        int qtde = 0;
+        for(ElementoQuimico atual : this.atomos)
+            if(atual.equals(outro))
+                qtde++;
+        return qtde;
+    }
+
 }

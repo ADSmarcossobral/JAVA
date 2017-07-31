@@ -47,4 +47,8 @@
             this.eletrons[camada] = qtdeEletrons;
       }
 
+      public String toString(){
+          return "[" + this.getNumeroAtomico() + "] - " + this.getNome();
+      }
+
 }
