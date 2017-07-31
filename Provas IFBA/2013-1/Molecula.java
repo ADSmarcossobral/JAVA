@@ -51,4 +51,8 @@ public class Molecula{
         return true;
     }
 
+    public boolean sameElementoQuimico(Molecula outra){
+        return this.contains(outra) && outra.contains(this);
+    }
+
 }
