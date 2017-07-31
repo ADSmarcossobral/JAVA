@@ -44,4 +44,11 @@ public class Molecula{
             return false;
     }
 
+    private boolean contains(Molecula outra){
+        for(ElementoQuimico atual : outra.atomos)
+            if(!this.exists(atual))
+                return false;
+        return true;
+    }
+
 }
