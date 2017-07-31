@@ -21,31 +21,31 @@ public class ElementoQuimico{
       }
 
       public int getNumeroMassa(){
-          return this.numeroMassa;
+            return this.numeroMassa;
       }
 
       public void setNumeroMassa(){
-          this.numeroMassa = numeroMassa;
+            this.numeroMassa = numeroMassa;
       }
 
       public String getNome(){
-          return this.nome;
+            return this.nome;
       }
 
       public void setNome(String nome){
-          this.nome = nome;
+            this.nome = nome;
       }
 
       public boolean equals(ElementoQuimico eq){
-          return this.getNumeroAtomico() = eq.getNumeroAtomico();
+            return this.getNumeroAtomico() = eq.getNumeroAtomico();
       }
 
       public int getQtdeEletrons(int camada){
-          return this.eletrons[camada];
+            return this.eletrons[camada];
       }
 
       public void setQTdeEletrons(int camada, int qtdeEletrons){
-          this.eletrons[camada] = qtdeEletrons;
+            this.eletrons[camada] = qtdeEletrons;
       }
-
+      
 }
