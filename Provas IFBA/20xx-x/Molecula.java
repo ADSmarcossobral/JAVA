@@ -14,4 +14,19 @@ public class Molecula{
         this.atomos = maior;
     }
 
+    public int size(){
+        return this.atomos.length;
+    }
+
+    public ElementoQuimico getMenorZ(){
+        if(this.size() == 0)
+            return null;
+        ElementoQuimico menor = ElementoQuimico[0];
+        for(ElementoQuimico atual : this.atomos){
+            if(atual.getNumeroAtomico() < menor.getNumeroAtomico())
+                menor = atual;
+        } 
+        return menor;
+    }
+
 }

@@ -8,11 +8,11 @@ public class AreaMonitorade{
             maior = this.sensores[0].getTemperatura();
             menor = this.sensores[0].getTemperatura();
             for(NoSensor sensor : this.sensores){
-                if(this.sensores.getTemperatura() > maior){
-                    maior = this.sensores.getTemperatura();
+                if(sensor.getTemperatura() > maior){
+                    maior = sensor.getTemperatura();
                 }
-                if(this.sensores.getTemperatura() < menor){
-                    menor = this.sensores.getTemperatura();
+                if(sensor.getTemperatura() < menor){
+                    menor = sensor.getTemperatura();
                 }
             }
         }
@@ -23,17 +23,17 @@ public class AreaMonitorade{
         double maior = 0.0, menor = 0.0;
         if(this.sensores.length > 0){
             for(NoSensor sensor : this.sensores){
-                if(this.sensores.getAltura() < altura){
-                    maior = this.sensores.getTemperatura();
-                    menor = this.sensores.getTemperatura();
+                if(sensor.getAltura() < altura){
+                    maior = sensor.getTemperatura();
+                    menor = sensor.getTemperatura();
                     break;
                 }
             }
             for(NoSensor sensor : this.sensores){
-                if(this.sensores.getTemperatura() > maior && this.sensores.getAltura() < altura)
-                    maior = this.sensores.getTemperatura();
-                if(this.sensores.getTemperatura() < menor && this.sensores.getAltura() < altura)
-                    menor = this.sensores.getTemperatura();
+                if(sensor.getTemperatura() > maior && sensor.getAltura() < altura)
+                    maior = sensor.getTemperatura();
+                if(sensor.getTemperatura() < menor && sensor.getAltura() < altura)
+                    menor = sensor.getTemperatura();
             }
         }
         return maior - menor;

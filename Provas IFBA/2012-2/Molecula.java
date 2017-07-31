@@ -7,7 +7,7 @@ public class Molecula{
     public Molecula(int n){
         recptores = new Receptor[n];
         for(Receptor r : this.recptores)
-            this.recptores = new Receptor();
+            r = new Receptor();
     }
 
     public Receptor[] getReceptores(){

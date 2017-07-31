@@ -1,5 +1,4 @@
 
-public class ElementoQuimico{
       private int numeroAtomico;
       private String nome;
       private int numeroMassa;
@@ -47,5 +46,5 @@ public class ElementoQuimico{
       public void setQTdeEletrons(int camada, int qtdeEletrons){
             this.eletrons[camada] = qtdeEletrons;
       }
-      
+
 }
