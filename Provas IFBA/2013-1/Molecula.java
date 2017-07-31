@@ -37,4 +37,11 @@ public class Molecula{
         return qtde;
     }
 
+    public boolean exists(ElementoQuimico outro){
+        for(ElementoQuimico atual : this.atomos)
+            if(atual.equals(outro))
+                return true;
+            return false;
+    }
+
 }
