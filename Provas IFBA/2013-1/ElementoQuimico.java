@@ -48,7 +48,7 @@
       }
 
       public String toString(){
-          return "[" + this.getNumeroAtomico() + "] -  " + this.getNome();
+          return "[" + this.getNumeroAtomico() + "] - " + this.getNome();
       }
 
 }
