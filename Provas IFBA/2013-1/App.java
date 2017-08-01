@@ -3,6 +3,8 @@ public class App{
     
     public void run(){
         ElementoQuimico oxigenio1 = new ElementoQuimico(8, 16, "Oxigenio");
+        ElementoQuimico oxigenio1 = new ElementoQuimico(8, 16, "Oxigenio");
+        ElementoQuimico oxigenio1 = new ElementoQuimico(8, 16, "Oxigenio");
         system.out.println(oxigenio1);
     }
 
