@@ -1,7 +1,9 @@
+import java.text.DecimalFormat;
 
 public class Receptor{
     
     private double proteina;
+    DecimalFormat formata = new DecimalFormat("0.00");
     
     public Receptor(double proteina){
         this(proteina);
@@ -24,7 +26,7 @@ public class Receptor{
     }
 
     public String toString(){
-        return "[" + getProteina() + "]";
+        return "[" + formata.format(getProteina()) + "]";
     }
 
 }
