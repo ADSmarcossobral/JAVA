@@ -5,6 +5,10 @@ public class ItemVenda extends Object{
     private String titulo;
     private double preco;
 
+    public ItemVenda(){
+   
+    }
+
     public int getId(){
         return this.id;
     }
