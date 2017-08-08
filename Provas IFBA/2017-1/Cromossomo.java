@@ -5,7 +5,7 @@ public class Cromossomo{
     public Cromossomo(int totalGenes){
         genes = new Gene[totalGenes];
         for(int gCont = 0; gCont < totalGenes; gCont++)
-            genes = new Gene();
+            this.genes[gCont] = new Gene();
     }
 
     public Gene buscar(int alelo){
@@ -18,7 +18,5 @@ public class Cromossomo{
             clone.genes[gCont] = this.genes[gCont].clonar();
         return clone;
     }
-
-    
 
 }
