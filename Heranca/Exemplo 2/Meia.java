@@ -7,7 +7,7 @@ public class Meia extends Ingresso{
 
     @Override
     public double getPreco(){
-        return this.preco / 2;
+        return super.getPreco() / 2;
     }
 
 }

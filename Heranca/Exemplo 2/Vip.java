@@ -7,7 +7,7 @@ public class Vip extends Ingresso{
 
    @Override
    public double getPreco(){
-       return 2 * this.preco;
+       return 2 * super.getPreco();
    }
     
 }
