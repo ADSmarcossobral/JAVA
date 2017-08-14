@@ -7,7 +7,8 @@ public class App{
     }
 
     public static void main(String[] args){
-        App.run();
+        App app = new App();
+        app.run();
     }
 
 
