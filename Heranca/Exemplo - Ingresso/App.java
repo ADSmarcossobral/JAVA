@@ -11,7 +11,7 @@ public class App{
         ingressos[3] = new PrimeiroLote("A04", 100);
 
         for(Ingresso ingresso : ingressos)
-            System.out.println(ingresso.getCadeira() + "--" + ingresso.getPreco());
+            System.out.println(ingresso);
        
     }
 

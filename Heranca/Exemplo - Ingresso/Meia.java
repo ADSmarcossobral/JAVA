@@ -16,8 +16,12 @@ public class Meia extends Ingresso{
         return super.getPreco() / 2;
     }
 
+    public String toString(){
+        return this.getCadeira() + "--" + this.getPreco() + "--" + this.getTipo();
+    }
+
     public int getTipo(){
-        return 
+        return this.tipo;
     }
 
 }

@@ -21,6 +21,10 @@ public class Ingresso{
         return this.preco;
     }
 
+    public String toString(){
+        return this.getCadeira() + "--" + this.getPreco();
+    }
+
     public void setPreco(double preco){
         this.preco = preco;
     }
