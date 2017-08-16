@@ -2,16 +2,17 @@
 public class App{
 
     public void run(){
-        Ingresso ing1 = new Ingresso("A01", 100);
-        Meia ing2 = new Meia("A02", 100);
-        Vip ing3 = new Vip("A03", 100);
-        PrimeiroLote ing4 = new PrimeiroLote("A04", 100);
+ 
+        Ingresso[] ingressos = new Ingresso[4];
+ 
+        ingressos[0] = new Ingresso("A01", 100);
+        ingressos[1] = new Meia("A02", 100, Meia.ESTUDANTE);
+        ingressos[2] = new Vip("A03", 100);
+        ingressos[3] = new PrimeiroLote("A04", 100);
 
-        System.out.println(ing1.getCadeira() + "--" + ing1.getPreco());
-        System.out.println(ing2.getCadeira() + "--" + ing2.getPreco());
-        System.out.println(ing3.getCadeira() + "--" + ing3.getPreco());
-        System.out.println(ing4.getCadeira() + "--" + ing4.getPreco());
-
+        for(Ingresso ingresso : ingressos)
+            System.out.println(ingresso.getCadeira() + "--" + ingresso.getPreco());
+       
     }
 
     public static void main(String[] args){
