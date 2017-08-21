@@ -4,6 +4,10 @@ public class Conta{
     private String nome;
     private double saldo;
 
+    public Conta(String nome, double saldo){
+        this(nome, saldo);
+    }
+
     public String getNome(){
         return this.nome;
     }
