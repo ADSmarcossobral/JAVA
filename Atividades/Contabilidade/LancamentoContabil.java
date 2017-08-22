@@ -6,6 +6,13 @@ public class LancamentoContabil{
     private Conta credito;
     private Conta debito;
 
+    public LancamentoContabil(String descricao, double valor, Conta credito, Conta debito){
+        this.setDescricao(descricao);
+        this.setValor(valor);
+        this.setContaCredito(credito);
+        this.setContaDebito(debito);
+    }
+
     public String getDescricao(){
         return this.descricao;
     }
@@ -22,19 +29,19 @@ public class LancamentoContabil{
         this.valor = valor;
     }
 
-    public Conta getCredito(){
+    public Conta getContaCredito(){
         return this.credito;
     }
     
-    public void setCredito(Conta credito){
+    public void setContaCredito(Conta credito){
         this.credito = credito;
     }
 
-    public Conta getDebito(){
+    public Conta getContaDebito(){
         return this.debito;
     }
 
-    public void setDebito(Conta debito){
+    public void setContaDebito(Conta debito){
         this.debito = debito;
     }
 

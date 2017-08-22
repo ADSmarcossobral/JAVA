@@ -5,6 +5,10 @@ public class RegistroContabil{
     private BalancoContabil balancoContabil;
     private LivroLancamentoContabil livroLancamentoContabil;
 
+    public RegistroContabil(String nomeEmpresa, String CGC, BalancoContabil balancoContabil, LivroLancamentoContabil livroLancamentoContabil){
+        this(nomeEmpresa, CGC, balancoContabil, livroLancamentoContabil);
+    }
+
     public String getNomeEmpresa(){
         return this.nomeEmpresa;
     }
