@@ -10,7 +10,7 @@ public class LivroLancamentoContabil{
     public void addLancamento(LancamentoContabil lancamento){
         LancamentoContabil[] temp = new LancamentoContabil[this.historico.length + 1];
         for(int iLanc = 0; iLanc < this.historico.length; iLanc++){
-            temp[iLanc] = this.historico[iLanc];
+            temp[iLanc] = this.setLancamentoContabil(iLanc, temp[iLanc]);
         }
         temp[temp.length - 1] = lancamento;
         this.historico = temp;
