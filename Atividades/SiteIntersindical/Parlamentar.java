@@ -5,10 +5,24 @@ public class Parlamentar extends Mandato{
     private int totalVotos;
     private double ativismoParlamentar;
     private double custoCampanha;
+    private Partido partido;
+    private PropostaLegislativa[] propostas;
 
-    public Parlamentar(int id, String nomeMandatario, int votos){
+    public PropostaLegislativa getProposta(int posicao){
+        return this.proposta[posicao];
+    }
+
+    public Parlamentar(int id, String nomeMandatario, int totalVotos){
         super(id, nomeMandatario);
-        this.setVotos(votos);    
+        this.setTotalVotos(totalVotos);    
+    }
+
+    public Partido getPartido(){
+        return this.partido;
+    }
+
+    public void setPartido(Partido partido){
+        this.partido = partido;
     }
 
     public double getRepresentatividade(){
@@ -23,7 +37,7 @@ public class Parlamentar extends Mandato{
         return this.totalVotos;
     }
 
-    public void setVotos(int totalVotos){
+    public void setTotalVotos(int totalVotos){
         this.totalVotos = totalVotos;
     }
 
