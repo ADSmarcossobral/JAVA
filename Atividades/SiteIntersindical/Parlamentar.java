@@ -1,12 +1,13 @@
 
-public class Parlamentar{
+public class Parlamentar extends Mandato{
 
     private double representatividade;
-    private int votos;
+    private int totalVotos;
     private double ativismoParlamentar;
     private double custoCampanha;
 
-    public Parlamentar(int votos){
+    public Parlamentar(int id, String nomeMandatario, int votos){
+        super(id, nomeMandatario);
         this.setVotos(votos);    
     }
 
@@ -18,12 +19,12 @@ public class Parlamentar{
         this.representatividade = representatividade;
     }
 
-    public int getVotos(){
-        return this.votos;
+    public int getTotalVotos(){
+        return this.totalVotos;
     }
 
-    public void setVotos(int votos){
-        this.votos = votos;
+    public void setVotos(int totalVotos){
+        this.totalVotos = totalVotos;
     }
 
     public double getAtivismoLegislativo(){

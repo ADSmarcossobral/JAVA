@@ -9,7 +9,7 @@ public class Mandato{
     }
 
     public double getAvaliacao(String nomeMandatario){
-        
+        return 0;
     }
 
     public int getId(){
