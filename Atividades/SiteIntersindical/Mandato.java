@@ -7,11 +7,7 @@ public class Mandato{
     public Mandato(int id, String nomeMandatario){
 
     }
-
-    public double getAvaliacao(String nomeMandatario){
-        return 0;
-    }
-
+    
     public int getId(){
         return this.id;
     }

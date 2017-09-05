@@ -1,14 +1,14 @@
 
 public class Partido extends Mandato{
 
-    private Bancada[] bancada; 
+    private Bancada bancada; 
 
     public Partido(int id, String nomeMandatario){
         super(id, nomeMandatario);
     }
-    @Override
-    public double getAavaliacao(){
 
+    public double getAvaliacao(){
+        return this.bancada.getMediaRepresentatividade() * this.bancada.getMediaAtivismoLegislativo();
     }
 
 
