@@ -1,5 +1,5 @@
 
-public class PropostaLegislativa{
+public abstract class PropostaLegislativa{
 
     private double defesaDH;
     private double defesaDT;
@@ -11,11 +11,9 @@ public class PropostaLegislativa{
         this.setDefesaIR(defesaIR);
     }
 
-    public int getImpactoLegislativo(){
-        return 0;
-    }
+    public abstract double getImpactoLegislativo();
 
-    private double getMaiorNota(){
+    public double getMaiorNota(){
         double maior;
         if(this.defesaDH > this.defesaDT && this.defesaDH > this.defesaIR)
             maior = this.defesaDH;
@@ -24,12 +22,6 @@ public class PropostaLegislativa{
         else
             maior = this.defesaIR;
         return maior;
-    }
-
-    public double getImpactoAbsoluto(){
-        double maior;
-        maior = getMaiorNota();
-        return (this.getDefesaDH() + this.getDefesaDT() + this.getDefesaIR()) / maior;
     }
 
     public double getDefesaDH(){

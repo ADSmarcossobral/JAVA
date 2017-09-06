@@ -6,6 +6,9 @@ public class ProjetoDeLei extends PropostaLegislativa{
     }
     
     public double getImpactoLegislativo(){
-        return (this.getDefesaDH() + this.getDefesaDT() + this.getDefesaIR()) / super.getMaiorNota();
+        double maior;
+        maior = getMaiorNota();
+        return (this.getDefesaDH() + this.getDefesaDT() + this.getDefesaIR()) / maior;
     }
+
 }

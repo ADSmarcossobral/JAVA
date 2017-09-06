@@ -1,9 +1,12 @@
 
 public class ParlamentarTitular extends Parlamentar{
+    
+    public ParlamentarTitular(int id, String nomeMandatario, int totalVotos){
+        super(id, nomeMandatario, totalVotos);
+    }
 
-    @Override
     public double getRepresentatividade(){
-        return super.getRepresentatividade() * 1;
+        return getRepresentatividadeAbsoluta() * 1;
     }
 
 

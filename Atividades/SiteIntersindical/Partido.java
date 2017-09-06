@@ -18,7 +18,7 @@ public class Partido extends Mandato{
     public double getMediaRepresentatividade(){
         double total = 0;
         for(Parlamentar parlamentar : this.parlamentares){
-            total += parlamentar.getRepresentatividade();
+            total += parlamentar.getRepresentatividadeAbsoluta();
         }
         return total / this.parlamentares.length;
     }
@@ -32,7 +32,7 @@ public class Partido extends Mandato{
     }
 
     public double getAvaliacao(){
-        return this.getMediaRepresentatividade() * this.getMediaAtivismoLegislativo();
+        return this.getMediaRepresentatividade() * this.getMediaAtivismo();
     }
 
     public double getAtivismoSem(Parlamentar p){

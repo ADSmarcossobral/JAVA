@@ -25,7 +25,7 @@ public class Parlamentar extends Mandato{
     }
 
     public double getAvaliacao(){
-        return this.getAtivismo() * this.getRepresentatividade();
+        return this.getAtivismo() * this.getRepresentatividadeAbsoluta();
     }
 
     public PropostaLegislativa getProposta(int posicao){
