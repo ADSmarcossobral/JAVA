@@ -2,7 +2,6 @@
 public class Parlamentar extends Mandato{
 
     private int totalVotos;
-    private double ativismoParlamentar;
     private double custoCampanha;
     private Partido partido;
     private PropostaLegislativa[] propostas;
@@ -12,8 +11,21 @@ public class Parlamentar extends Mandato{
         this.setTotalVotos(totalVotos); 
         propostas = new PropostaLegislativa[0];  
     }
+
+    public double getAtivismo(){
+        return this.getAtivismoLegislativoBruto() * this.partido.getAtivismoSem(this);
+    }
+
+    public double getAtivismoLegislativoBruto(){
+        double bruto = 0;
+         for(PropostaLegislativa proposta : propostas){
+             bruto += proposta.getImpactoLegislativo();
+         }
+        return bruto;
+    }
+
     public double getAvaliacao(){
-        return getAtivismoLegislativo() * getRepresentatividade();
+        return this.getAtivismo() * this.getRepresentatividade();
     }
 
     public PropostaLegislativa getProposta(int posicao){
@@ -32,8 +44,8 @@ public class Parlamentar extends Mandato{
         this.partido = partido;
     }
 
-    public double getRepresentatividade(){
-        return this.getTotalVotos() / this.getCustoCampanha();
+    public double getRepresentatividadeAbsoluta(){
+        return this.getCustoCampanha() / this.getTotalVotos();
     }
 
     public int getTotalVotos(){
@@ -44,14 +56,6 @@ public class Parlamentar extends Mandato{
         this.totalVotos = totalVotos;
     }
 
-    public double getAtivismoLegislativo(){
-        return this.ativismoParlamentar;
-    }
-
-    public void setAtivismoLegislativo(double ativismoParlamentar){
-        this.ativismoParlamentar = ativismoParlamentar;
-    }
-
     public double getCustoCampanha(){
         return this.custoCampanha;
     }
@@ -59,6 +63,5 @@ public class Parlamentar extends Mandato{
     public void setCustoCampanha(double custoCampanha){
         this.custoCampanha = custoCampanha;
     }
-
 
 }
