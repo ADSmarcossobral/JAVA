@@ -1,24 +1,30 @@
 
-public class Conta implements Jsonable{
+public class Conta implements JSonnable{
 
+    private String id;
     private String nome;
     private double saldo;
 
-    public Conta(String nome, double saldo){
-       this.setNome(nome);
-       this.setSaldo(saldo);
+    public Conta(String id, String nome, double saldo){
+        this.setId(id);
+        this.setNome(nome);
+        this.setSaldo(saldo);
     }
 
-    public String[] getValoresAtributos(){
-        
+    public CampoJSon[] getCampos(){
+        CampoJSon[] campos = new CampoJSon[3];
+        campos[0] = new CampoJSon("id", this.getId());
+        campos[1] = new CampoJSon("nome", this.getNome());
+        campos[2] = new CampoJSon("saldo", this.getSaldo());
+        return campos;
     }
 
-    public String[] getNomeAtributos(){
-
+    public String getId(){
+        return this.id;
     }
 
-    public int[] getTiposAtributos(){
-
+    public void setId(String id){
+        this.id = id;
     }
 
     public String getNome(){
