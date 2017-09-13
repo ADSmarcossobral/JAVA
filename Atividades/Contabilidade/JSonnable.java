@@ -6,6 +6,6 @@ public interface JSonnable{
     public static final int STRING = 2;
     public static final int BOOLEAN = 3;
 
-    public JSonner[] getCampos();
+    public CampoJSon[] getCampos();
 
 }
