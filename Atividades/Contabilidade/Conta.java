@@ -1,5 +1,5 @@
 
-public class Conta implements JSonnable{
+public abstract class Conta implements JSonnable{
 
     private String id;
     private String nome;
@@ -50,5 +50,8 @@ public class Conta implements JSonnable{
     public void creditar(double valor){
         this.saldo += valor;
     }
+
+    public abstract void creditar();
+    public abstract void debitar();
 
 }
