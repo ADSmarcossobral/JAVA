@@ -1,25 +1,40 @@
 
-public class Celular extends HostAtivo{
+public class Celular extends Host{
 
-    private Antena antena;
+	private Antena antena;
+	
+	public Celular(String id, double potencia, double posX, double posY) {
+		super(id,potencia,posX,posY);		
+	}
 
-    public Celular(String id, double potencia){
-        super(id,potencia);
-    }
+	public Antena getAntena() {
+		return antena;
+	}
 
-    public void enviarMsg(){
+	public void setAntena(Antena antena) {
+		this.antena = antena;
+	}
+	
+	public void associarAntena(Antena antena) {
+		this.setAntena(antena);
+	}
+	
+	public void desassociarAntena(){
+		this.setAntena(null);
+	}
 
-    }
-    public void receberMsg(){
+	public boolean equals(String outro) {
+		return this.getId().equals(outro);
+	}
+	
+	@Override
+	public void sendMsg() {
+		
+	}
 
-    }
-
-    public Antena getAntena(){
-        return this.antena;
-    }
-
-    public void conectarAntena(Antena antena){
-        this.antena = antena;
-    }
-
+	@Override
+	public void receiveMsg() {
+		
+	}
+	
 }
