@@ -1,9 +1,0 @@
-package inf008.persistencia.sql;
-
-import inf008.persistencia.ContaDAO;
-
-public class ContaDAOSQL implements ContaDAO {
-
-	
-	
-}

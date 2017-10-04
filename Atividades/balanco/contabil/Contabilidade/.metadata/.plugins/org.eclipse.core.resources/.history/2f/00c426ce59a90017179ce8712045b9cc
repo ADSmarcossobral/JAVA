@@ -23,7 +23,8 @@ public class ContaDAOSQL implements ContaDAO {
 	@Override
 	public void save(Conta conta) throws Exception {
 		DriverManager.registerDriver(new org.postgresql.Driver());
-		PreparedStatement pStmt = getConnection().prepareStatement(ContaDAOSQL.INSERT_CONTA
+		Connection conn = ;
+		PreparedStatement pStmt = conn.prepareStatement(INSERT_CONTA
 				+ " VALUES (?, ?, ?, ?, ?);");
 		
 		char tipo = '\0';
@@ -55,13 +56,14 @@ public class ContaDAOSQL implements ContaDAO {
 
 	@Override
 	public void update(String nomeContaCredito, String nomeContaDebito, double valor) {
-		PreparedStatement = getConnection().prepareStatement(ContaDAOSQL.UPDATE_CONTA + "");
+		PreparedStatement = pStmt = this.getConnection().prepareStatement(UPDATE_CONTA + "");
 	}
 
 	@Override
 	public Conta findByName(String nome) throws SQLException {
 		Conta conta = null;
-		PreparedStatement pStmt = getConnection().prepareStatement(ContaDAOSQL.SELECT_CONTA
+		Connection conn = ;
+		PreparedStatement pStmt = conn.prepareStatement(SELECT_CONTA
 				+ " FROM conta WHERE nome = ?;");
 		pStmt.setString(1, nome);
 		ResultSet rs = pStmt.executeQuery();

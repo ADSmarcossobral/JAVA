@@ -5,12 +5,15 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.beans.Statement"/>
 <fullyQualifiedTypeName name="java.sql.Statement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="inf008.util.json.CampoJSon"/>
 <fullyQualifiedTypeName name="inf008.util.ordenacao.Ordenador"/>
-<fullyQualifiedTypeName name="inf008.persistencia.ContaDAO"/>
 <fullyQualifiedTypeName name="inf008.contabil.Ativo"/>
 <fullyQualifiedTypeName name="inf008.contabil.Passivo"/>
 <fullyQualifiedTypeName name="inf008.contabil.PatrimonioLiquido"/>
+<fullyQualifiedTypeName name="inf008.util.json.CampoJSon"/>
+<fullyQualifiedTypeName name="inf008.persistencia.sql.ContaDAOSQL"/>
+<fullyQualifiedTypeName name="inf008.persistencia.ContaDAO"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="inf008.exception.ContaNaoEncontradaException"/>
+<fullyQualifiedTypeName name="inf008.contabil.Conta"/>
 </qualifiedTypeNameHistroy>

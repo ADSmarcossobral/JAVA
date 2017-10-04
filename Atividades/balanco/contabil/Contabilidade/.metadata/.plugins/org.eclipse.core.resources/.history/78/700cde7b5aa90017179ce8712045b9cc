@@ -19,11 +19,21 @@ public class ContaDAOSQL implements ContaDAO {
 	private static final String INSERT_CONTA = "INSERT INTO conta(id, nome, saldo, emUso, tipo)";
 	private static final String SELECT_CONTA = "SELECT id, saldo, nome, emUso, tipo";
 	private static final String UPDATE_CONTA = "UPDATE saldo";
+	private Connection conn;
+
+	public Connection getConn() {
+		return conn;
+	}
+
+	public void setConn(Connection conn) {
+		this.conn = conn;
+	}
 
 	@Override
 	public void save(Conta conta) throws Exception {
 		DriverManager.registerDriver(new org.postgresql.Driver());
-		PreparedStatement pStmt = getConnection().prepareStatement(ContaDAOSQL.INSERT_CONTA
+		conn = ;
+		PreparedStatement pStmt = conn.prepareStatement(ContaDAOSQL.INSERT_CONTA
 				+ " VALUES (?, ?, ?, ?, ?);");
 		
 		char tipo = '\0';
@@ -61,7 +71,8 @@ public class ContaDAOSQL implements ContaDAO {
 	@Override
 	public Conta findByName(String nome) throws SQLException {
 		Conta conta = null;
-		PreparedStatement pStmt = getConnection().prepareStatement(ContaDAOSQL.SELECT_CONTA
+		Connection conn = ;
+		PreparedStatement pStmt = conn.prepareStatement(ContaDAOSQL.SELECT_CONTA
 				+ " FROM conta WHERE nome = ?;");
 		pStmt.setString(1, nome);
 		ResultSet rs = pStmt.executeQuery();
