@@ -1,0 +1,10 @@
+package inf008.DAO;
+
+import java.sql.Connection;
+
+public class ConectionFactory{
+	
+	private Connection con;
+	
+
+}

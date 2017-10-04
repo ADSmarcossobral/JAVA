@@ -1,0 +1,14 @@
+package inf008.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConectionFactory{
+	
+	private Connection conexao;
+
+	public Connection getConexao() {
+		return conexao;
+	}
+	
+}

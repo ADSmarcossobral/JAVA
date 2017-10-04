@@ -1,0 +1,23 @@
+package inf008.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConectionFactory{
+	
+	private Connection conexao;
+	
+	DriverManager.registerDriver(new org.postgresql.Driver());
+	System.out.println("Driver Registrado");
+	Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/java", "postgres", "");
+
+	public Connection getConexao() {
+		return conexao;
+	}
+
+	public void setConexao(Connection con) {
+		this.conexao = con;
+	}
+	
+
+}

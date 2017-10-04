@@ -1,0 +1,36 @@
+package inf008.persistencia.sql;
+
+import inf008.contabil.Conta;
+import inf008.persistencia.ContaDAO;
+
+public class ContaDAOSQL implements ContaDAO {
+
+	@Override
+	public void save(Conta conta) throws Exception {
+		
+	}
+
+	@Override
+	public void add(Conta conta) throws Exception {
+		
+	}
+
+	@Override
+	public void remove(Conta conta) throws Exception {
+		
+	}
+
+	@Override
+	public void ajustar(String nomeContaCredito, String nomeContaDebito, double valor) {
+		
+	}
+
+	@Override
+	public Conta findByName(String nomeContaCredito) {
+
+		return null;
+	}
+
+	
+	
+}

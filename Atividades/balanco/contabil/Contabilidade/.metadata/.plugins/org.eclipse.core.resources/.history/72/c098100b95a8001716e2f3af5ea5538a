@@ -1,0 +1,14 @@
+package inf008.jdbc;
+
+public class TestJDBC {
+
+	void run() throws SQLException{
+		
+	}
+	
+	public static void main(String[] args){
+		
+	}
+	
+	
+}

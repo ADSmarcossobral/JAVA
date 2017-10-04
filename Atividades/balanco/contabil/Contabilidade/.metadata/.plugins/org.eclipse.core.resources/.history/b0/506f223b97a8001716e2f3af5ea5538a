@@ -1,0 +1,23 @@
+package inf008.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestJDBC {
+
+	void run() throws SQLException{
+		DriverManager.registerDriver(new org.postgresql.Driver());
+		System.out.println("Driver Registrado");
+		Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/java", "postgres", "");
+		ResultSet rSet = Statement stmt = conn.createStatement();
+		stmt.executeQuery("");
+	}
+	
+	public static void main(String[] args){
+		
+	}
+	
+	
+}

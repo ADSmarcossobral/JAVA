@@ -1,0 +1,10 @@
+package inf008.persistencia;
+
+public class ContaDAO {
+	
+	
+	
+	
+	public void save(Conta conta)
+	
+}

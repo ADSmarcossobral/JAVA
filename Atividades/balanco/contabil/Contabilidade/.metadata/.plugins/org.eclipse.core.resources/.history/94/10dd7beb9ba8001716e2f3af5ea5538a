@@ -1,0 +1,5 @@
+package inf008.persistencia;
+
+public class ContaDAO {
+
+}
