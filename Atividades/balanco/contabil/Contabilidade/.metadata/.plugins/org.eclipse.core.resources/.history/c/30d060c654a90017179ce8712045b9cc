@@ -1,0 +1,9 @@
+package inf008.exception;
+
+public class ContaNaoEncontradaException {
+
+	public ContaNaoEncontradaException(Conta conta){
+		
+	}
+	
+}

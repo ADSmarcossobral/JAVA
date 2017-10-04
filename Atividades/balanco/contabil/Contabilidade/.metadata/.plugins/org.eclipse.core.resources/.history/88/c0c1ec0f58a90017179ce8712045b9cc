@@ -1,0 +1,5 @@
+package inf008.persistencia.sql;
+
+public class GenericDAOSQL {
+
+}

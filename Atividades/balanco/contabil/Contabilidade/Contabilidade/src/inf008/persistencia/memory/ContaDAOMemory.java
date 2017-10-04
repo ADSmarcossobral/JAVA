@@ -5,7 +5,7 @@ import inf008.contabil.Conta;
 import inf008.persistencia.ContaDAO;
 import inf008.util.ordenacao.Ordenador;
 
-public class BalancoContabil implements ContaDAO{
+public class ContaDAOMemory implements ContaDAO{
     private Conta[] contas = new Conta[0];
     
     public void addConta(Conta conta){

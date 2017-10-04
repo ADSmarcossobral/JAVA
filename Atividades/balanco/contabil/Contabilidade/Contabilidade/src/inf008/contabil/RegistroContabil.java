@@ -1,12 +1,14 @@
 package inf008.contabil;
 
+import java.sql.SQLException;
+
 import inf008.persistencia.ContaDAO;
 import inf008.persistencia.sql.ContaDAOSQL;
 
 public class RegistroContabil{
     private String nomeEmpresa;
     private String cnpjEmpresa;
-    private ContaDAO balanco;
+    private ContaDAOSQL balanco;
     private LivroContabil livro;    
     
 
@@ -36,7 +38,7 @@ public class RegistroContabil{
     public void registrarFatoContabil(int id, String descricao,
                                       String nomeContaCredito,
                                       String nomeContaDebito,
-                                      double valor){
+                                      double valor) throws SQLException{
                                           
                                           
       Conta credito = this.balanco.findByName(nomeContaCredito);                                      

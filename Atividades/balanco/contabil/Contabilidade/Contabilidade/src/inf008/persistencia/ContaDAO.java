@@ -11,8 +11,8 @@ public interface ContaDAO {
 	
 	public void remove(Conta conta) throws Exception;
 
-	public void ajustar(String nomeContaCredito, String nomeContaDebito, double valor);
-
 	public Conta findByName(String nomeContaCredito) throws SQLException;
+
+	void update(String nomeContaCredito, String nomeContaDebito, double valor);
 	
 }
