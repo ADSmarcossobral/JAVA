@@ -1,5 +1,6 @@
 package inf008.contabil;
 
+import inf008.util.json.CampoJSon;
 import inf008.util.json.JSonnable;
 import inf008.util.ordenacao.Ordenavel;
 

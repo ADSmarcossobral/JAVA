@@ -3,6 +3,7 @@ package inf008.persistencia.sql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import inf008.contabil.Ativo;
 import inf008.contabil.Conta;
@@ -52,8 +53,12 @@ public class ContaDAOSQL implements ContaDAO {
 	}
 
 	@Override
-	public Conta findByName(String nomeContaCredito) {
-
+	public Conta findByName(String nomeContaCredito) throws SQLException {
+		Conta conta;
+		DriverManager.registerDriver(new org.postgresql.Driver());
+		Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/java", "postgres", "");
+		PreparedStatement pStmt = conn.prepareStatement("SELECT id, saldo, nome, emUso, tipo"
+				+ " VALUES (?, ?, ?, ?, ?);");
 		return null;
 	}
 

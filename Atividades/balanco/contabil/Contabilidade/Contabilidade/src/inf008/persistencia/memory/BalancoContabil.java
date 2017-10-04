@@ -2,9 +2,10 @@
 package inf008.persistencia.memory;
 
 import inf008.contabil.Conta;
+import inf008.persistencia.ContaDAO;
 import inf008.util.ordenacao.Ordenador;
 
-public class BalancoContabil{
+public class BalancoContabil implements ContaDAO{
     private Conta[] contas = new Conta[0];
     
     public void addConta(Conta conta){
@@ -19,7 +20,7 @@ public class BalancoContabil{
     }    
     
     
-    public Conta encontrarContaPeloNome(String nome){
+    public Conta findByName(String nome){
         for(Conta atual : this.contas)
           if (atual.getNome().equals(nome))
             return atual;
@@ -27,8 +28,8 @@ public class BalancoContabil{
     }    
     
     public void ajustar(String nomeContaCredito, String nomeContaDebito, double valor){
-        this.encontrarContaPeloNome(nomeContaCredito).creditar(valor);
-        this.encontrarContaPeloNome(nomeContaDebito).debitar(valor);        
+        this.findByName(nomeContaCredito).creditar(valor);
+        this.findByName(nomeContaDebito).debitar(valor);        
     }  
     
     public String toString(){
@@ -38,7 +39,27 @@ public class BalancoContabil{
         for(Conta atual : this.contas)
           rep += atual + "\n";
         return rep;  
-    }    
+    }
+
+
+	@Override
+	public void save(Conta conta) throws Exception {
+		
+		
+	}
+
+
+	@Override
+	public void add(Conta conta) throws Exception {
+				
+	}
+
+
+	@Override
+	public void remove(Conta conta) throws Exception {
+	
+		
+	}  
     
     
 }
