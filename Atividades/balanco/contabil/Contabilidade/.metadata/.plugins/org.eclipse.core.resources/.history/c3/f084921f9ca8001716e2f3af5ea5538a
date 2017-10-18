@@ -1,0 +1,13 @@
+package inf008.persistencia;
+import inf008.contabil.Conta;
+
+public class ContaDAO {
+	
+	
+	
+	
+	public void save(Conta conta) throws Exception{
+		
+	}
+	
+}

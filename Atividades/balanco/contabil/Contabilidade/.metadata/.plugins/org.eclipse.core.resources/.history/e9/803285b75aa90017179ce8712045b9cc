@@ -1,0 +1,88 @@
+package inf008.persistencia.sql;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import inf008.contabil.Ativo;
+import inf008.contabil.Conta;
+import inf008.contabil.Passivo;
+import inf008.contabil.PatrimonioLiquido;
+import inf008.exception.ContaNaoEncontradaException;
+import inf008.persistencia.ContaDAO;
+import inf008.persistencia.sql.GenericDAOSQL;
+
+public class ContaDAOSQL implements ContaDAO {
+	
+	private static final String INSERT_CONTA = "INSERT INTO conta(id, nome, saldo, emUso, tipo)";
+	private static final String SELECT_CONTA = "SELECT id, saldo, nome, emUso, tipo";
+	private static final String UPDATE_CONTA = "UPDATE saldo";
+
+	@Override
+	public void save(Conta conta) throws Exception {
+		DriverManager.registerDriver(new org.postgresql.Driver());
+		PreparedStatement pStmt = getConnection().prepareStatement(ContaDAOSQL.INSERT_CONTA
+				+ " VALUES (?, ?, ?, ?, ?);");
+		
+		char tipo = '\0';
+		
+		if(conta instanceof Ativo)
+			tipo = 'A';
+		else if(conta instanceof Passivo)
+			tipo = 'P';
+		else if(conta instanceof PatrimonioLiquido)
+			tipo = 'L';
+		pStmt.setInt(1, conta.getId());
+		pStmt.setString(2, conta.getNome());
+		pStmt.setDouble(3, conta.getSaldo());
+		pStmt.setBoolean(4, conta.isEmUso());
+		pStmt.setString(5, Character.toString(tipo));
+		pStmt.close();
+		conn.close();
+	}
+
+	@Override
+	public void add(Conta conta) throws Exception {
+		
+	}
+
+	@Override
+	public void remove(Conta conta) throws Exception {
+		
+	}
+
+	@Override
+	public void update(String nomeContaCredito, String nomeContaDebito, double valor) {
+		PreparedStatement = getConnection().prepareStatement(ContaDAOSQL.UPDATE_CONTA + "");
+	}
+
+	@Override
+	public Conta findByName(String nome) throws SQLException {
+		Conta conta = null;
+		PreparedStatement pStmt = getConnection.prepareStatement(ContaDAOSQL.SELECT_CONTA
+				+ " FROM conta WHERE nome = ?;");
+		pStmt.setString(1, nome);
+		ResultSet rs = pStmt.executeQuery();
+		if(rs.next()){
+			int id = rs.getInt("id");
+			double saldo = rs.getDouble("saldo");
+			String nomeConta = rs.getString("nome");
+			boolean emUso = rs.getBoolean("emUso");
+			String tipo = rs.getString("tipo");
+			if(tipo.equals("A"))
+				conta = new Ativo(id, nomeConta, saldo, emUso);
+			else if(tipo.equals("P"))
+				conta = new Passivo(id, nomeConta, saldo, emUso);
+			else if(tipo.equals("L"))
+				conta = new PatrimonioLiquido(id, nomeConta, saldo, emUso);
+		}
+		/*if(conta == null)
+			throw new ContaNaoEncontradaException(nome);*/
+		return conta;
+	}
+
+	
+	
+}

@@ -1,0 +1,18 @@
+package inf008.DAO;
+
+import java.sql.Connection;
+
+public class ConectionFactory{
+	
+	private Connection conexao;
+
+	public Connection getConnection() {
+		return conexao;
+	}
+
+	public void setConnection(Connection con) {
+		this.conexao = con;
+	}
+	
+
+}

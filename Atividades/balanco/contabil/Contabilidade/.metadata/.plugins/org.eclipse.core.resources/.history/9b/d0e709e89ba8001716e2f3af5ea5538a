@@ -1,0 +1,22 @@
+package inf008.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConectionFactory{
+	
+	private Connection conexao;
+	
+	public ConectionFactory(){
+		this.conexao = null;
+	}
+
+	public Connection getConexao() throws SQLException {
+		if(conexao == null){
+			conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432", "postgres", "");
+		}
+		return conexao;
+	}
+	
+}
