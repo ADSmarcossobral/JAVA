@@ -1,4 +1,4 @@
-package balanco.contabil;
+package info.contabil;
 public class RegistroContabil{
     private String nomeEmpresa;
     private String cnpjEmpresa;
